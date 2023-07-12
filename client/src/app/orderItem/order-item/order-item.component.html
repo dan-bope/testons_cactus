@@ -1,0 +1,142 @@
+<!-- <div class="mx-5" style="margin-top: 5rem;">
+  <style>
+      table * {
+          color: black;
+          border: none;
+      }
+  </style>
+  <h1>Cart</h1>
+  <table class="table mt-5">
+      <thead style="background-color: #fff2; border: none;" class="mb-5">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Date Added to Cart</th>
+          <th scope="col">Image</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of orderItems; let i = index">
+          <tr>
+              <th scope="row">{{item.product.name}}</th>
+              <td>${{item.product.price | number: '1.2-2'}}</td>
+              <td>
+                  <div class="d-flex" style="align-items: center;">
+                      <p style="margin-right: 1rem;">{{ item.quantity }}</p>
+                      <button class="bg-transparent">
+                      </button>
+                      <button class="bg-transparent">
+                      </button>
+                  </div>
+              </td>
+              <td>{{item.addedOn | date: 'MM/dd/YYYY'}}</td>
+              <td><img class="product-image" src="./../../../assets/Images/{{item.product.id}}/{{item.product.image}}" alt="Product 1"></td>
+              <td>${{item.totalPrice | number: '1.2-2'}}</td>
+          </tr>
+      </tbody>
+      <tbody>
+          <tr>
+              <th scope="row"></th>
+              <td></td>
+              <td></td>
+              <td></td>
+
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><button class="btn btn-success" *ngIf="orderItems">Checkout</button></td>
+            </tr>
+      </tbody>
+  </table>
+</div>
+ -->
+
+<div class="main">
+<div class="container">
+  <h1>Cart</h1>
+
+  <div class="cart" *ngFor="let item of orderItems; let i = index">
+      <div class="cart-item">
+        <img class="product-image" src="./../../../assets/Images/{{item.product.id}}/{{item.product.image}}" alt="Product 1">
+          <div class="cart-item-details">
+              <div class="cart-item-title">{{item.product.name}}</div>
+              <div class="cart-item-price">${{item.product.price | number: '1.2-2'}}</div>
+              <div class="cart-item-quantity">
+                  <input type="number" value="1" min="1">
+              </div>
+              <div class="cart-item-price">Quantity Current</div>
+              <div class="cart-item-price">{{ item.quantity }}</div>
+          </div>
+      </div>
+
+      <div class="cart-total">
+          <div class="cart-total-label">Total:</div>
+          ${{item.totalPrice | number: '1.2-2'}}
+      </div>
+
+      <div class="cart-actions">
+          <button class="cart-action-button">Checkout</button>
+      </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footerLeft">
+      <div class="footerMenu">
+          <h1 class="fMenuTitle">About Us</h1>
+          <ul class="fList">
+              <li class="fListItem">Company</li>
+              <li class="fListItem">Contact</li>
+              <li class="fListItem">Careers</li>
+              <li class="fListItem">Affiliates</li>
+              <li class="fListItem">Stores</li>
+          </ul>
+      </div>
+      <div class="footerMenu">
+          <h1 class="fMenuTitle">Useful Links</h1>
+          <ul class="fList">
+              <li class="fListItem">Support</li>
+              <li class="fListItem">Refund</li>
+              <li class="fListItem">FAQ</li>
+              <li class="fListItem">Feedback</li>
+              <li class="fListItem">Stories</li>
+          </ul>
+      </div>
+      <div class="footerMenu">
+          <h1 class="fMenuTitle">Products</h1>
+          <ul class="fList">
+              <li class="fListItem">Air Force</li>
+              <li class="fListItem">Air Jordan</li>
+              <li class="fListItem">Blazer</li>
+              <li class="fListItem">Jordan 4</li>
+              <li class="fListItem">Air max</li>
+          </ul>
+      </div>
+  </div>
+  <div class="footerRight">
+      <div class="footerRightMenu">
+          <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
+          <div class="fMail">
+              <input type="text" placeholder="your@email.com" class="fInput">
+              <button class="fButton">Join!</button>
+          </div>
+      </div>
+      <div class="footerRightMenu">
+          <h1 class="fMenuTitle">Follow Us</h1>
+          <div class="fIcons">
+            <img src="./../../../../assets/img/facebook.png" alt="" class="fIcon">
+            <img src="./../../../../assets/img/twitter.png" alt="" class="fIcon">
+            <img src="./../../../../assets/img/instagram.png" alt="" class="fIcon">
+            <img src="./../../../../assets/img/whatsapp.png" alt="" class="fIcon">
+          </div>
+      </div>
+      <div class="footerRightMenu">
+          <span class="copyright">MyEshop. All rights reserved. 2023.</span>
+      </div>
+  </div>
+</footer>
+</div>

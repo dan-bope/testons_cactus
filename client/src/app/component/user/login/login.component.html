@@ -1,0 +1,42 @@
+<div [ngSwitch]="loadPageInLogin">
+  <div *ngSwitchCase="0">
+    <section>
+      <div class="form-box">
+          <div class="form-value">
+              <form (ngSubmit)="onSubmit()" #userForm="ngForm" action="">
+                  <h2>Login</h2>
+                  <div class="inputbox">
+                      <!-- <ion-icon name="mail-outline"></ion-icon> -->
+                      <input type="text" [(ngModel)]="user.username"
+                            id="name"
+                            name="name"
+                            required #name="ngModel">
+                      <label for="name">Name</label>
+                  </div>
+                  <div class="inputbox">
+                      <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
+                      <input type="password" [(ngModel)]="user.password"
+                            id="email"
+                            name="email"
+                            required #email="ngModel">
+                      <label for="email">Password</label>
+                  </div>
+                  <div class="forget">
+                      <label for=""><input type="checkbox">Remember Me  <a href="#"> Forget Password</a></label>
+
+                  </div>
+                  <button type="submit" [disabled]="!userForm.form.valid">Log in</button>
+                  <div class="register">
+                      <p>Don't have a account ? <a href="adduser" onclick="showRegisterForm()">Register</a></p>
+                  </div>
+              </form>
+
+          </div>
+      </div>
+    </section>
+</div>
+<div *ngSwitchCase="1">
+  <app-product-list></app-product-list>
+</div>
+</div>
+<p>{{loadPageInLogin}}</p>

@@ -1,0 +1,25 @@
+<nav id="nav">
+  <div class="navTop">
+      <div class="navItem">
+          <img src="assets/img/sneakers.png" alt="">
+      </div>
+      <div class="navItem">
+        <!-- <button type="button" (click)="loginPage()" class="button">Login</button> -->
+        <!-- <button type="button" (click)="loginPage()"  class="button">Login</button>
+        {{loadPage}} -->
+        <a routerLink="/products"><button class="button">Products</button></a>
+        <a routerLink="/cart"><button class="button">Cart</button></a>
+        <a routerLink="/login"><button class="button">Login</button></a>
+        <!-- <a routerLink="adduser"><button class="button">Register</button></a> -->
+        <button (click)="logOut()" class="button">Logout</button>
+      </div>
+  </div>
+  <div class="navBottom">
+    <h3 class="menuItem">AIR FORCE</h3>
+    <h3 class="menuItem">JORDAN</h3>
+    <h3 class="menuItem">BLAZER</h3>
+    <h3 class="menuItem">CRATER</h3>
+    <h3 class="menuItem">HIPPIE</h3>
+  </div>
+</nav>
+<router-outlet></router-outlet>

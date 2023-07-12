@@ -1,0 +1,72 @@
+<div class="main">
+  <h1 class="mx-auto text-center" style="margin-bottom: 6rem;">All Products</h1>
+  <div class="container">
+    <div *ngFor="let product of products; let i = index">
+      <div class="product">
+          <img class="product-image" src={{product.image}} alt="Product 1">
+          <div class="product-title">{{ product.name }}</div>
+          <div class="product-price">
+            <h3>${{ product.price | number : '1.2-2' }}</h3>
+            <a routerLink="/product/{{ product.id }}" class="btn btn-success">see product</a>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+      <div class="footerLeft">
+          <div class="footerMenu">
+              <h1 class="fMenuTitle">About Us</h1>
+              <ul class="fList">
+                  <li class="fListItem">Company</li>
+                  <li class="fListItem">Contact</li>
+                  <li class="fListItem">Careers</li>
+                  <li class="fListItem">Affiliates</li>
+                  <li class="fListItem">Stores</li>
+              </ul>
+          </div>
+          <div class="footerMenu">
+              <h1 class="fMenuTitle">Useful Links</h1>
+              <ul class="fList">
+                  <li class="fListItem">Support</li>
+                  <li class="fListItem">Refund</li>
+                  <li class="fListItem">FAQ</li>
+                  <li class="fListItem">Feedback</li>
+                  <li class="fListItem">Stories</li>
+              </ul>
+          </div>
+          <div class="footerMenu">
+              <h1 class="fMenuTitle">Products</h1>
+              <ul class="fList">
+                  <li class="fListItem">Air Force</li>
+                  <li class="fListItem">Air Jordan</li>
+                  <li class="fListItem">Blazer</li>
+                  <li class="fListItem">Jordan 4</li>
+                  <li class="fListItem">Air max</li>
+              </ul>
+          </div>
+      </div>
+      <div class="footerRight">
+          <div class="footerRightMenu">
+              <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
+              <div class="fMail">
+                  <input type="text" placeholder="your@email.com" class="fInput">
+                  <button class="fButton">Join!</button>
+              </div>
+          </div>
+          <div class="footerRightMenu">
+              <h1 class="fMenuTitle">Follow Us</h1>
+              <div class="fIcons">
+                  <img src="./../../../../assets/img/facebook.png" alt="" class="fIcon">
+                  <img src="./../../../../assets/img/twitter.png" alt="" class="fIcon">
+                  <img src="./../../../../assets/img/instagram.png" alt="" class="fIcon">
+                  <img src="./../../../../assets/img/whatsapp.png" alt="" class="fIcon">
+              </div>
+          </div>
+          <div class="footerRightMenu">
+              <span class="copyright">db-shopme. All rights reserved. 2023.</span>
+          </div>
+      </div>
+  </footer>
+</div>

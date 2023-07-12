@@ -1,0 +1,45 @@
+<input type="checkbox" id="menu-toggle">
+    <div class="main-content">
+        <main>
+            <div class="page-content">
+                <div class="records table-responsive">
+
+
+
+                    <div>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th><span class="las la-sort"></span> CLIENT</th>
+                                    <th><span class="las la-sort"></span> ROLE CLIENT</th>
+                                    <th><span class="las la-sort"></span> ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let user of users">
+                                <td>#{{ user.id }}</td>
+                                <td>
+                                  <div class="client">
+                                    <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                                     <div class="client-info">
+                                         <h4>{{ user.username }}</h4>
+                                     </div>
+                                 </div>
+                                </td>
+                                <td *ngFor="let role of user.roles; index as i">{{ role.name }}</td>
+                                <td>
+                                    <button class="btn btn-danger mx-2" (click)="deleteUser(user.id)">Delete</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
